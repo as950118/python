@@ -11,7 +11,7 @@ query='?query='+urllib.parse.quote_plus(search)
 fullURL = defaultURL + query + display + start
 print(fullURL)
 
-file=open("c:\\python34\\crawl\\web\\%s.txt"%search,"w",encoding='utf-8')
+file=open("result\\%s.txt"%search,"w",encoding='utf-8')
 headers={
     'Most':'openapi.naver.com',
     'User-Agent':'curl/7.43.0',
