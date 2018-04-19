@@ -18,6 +18,7 @@
 '''
 
 import tensorflow as tf
+import random
 import numpy as np
 
 #진리표 세팅

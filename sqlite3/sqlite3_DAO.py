@@ -27,13 +27,6 @@ class DAO_SQLITE3:
         cur.execute(sql_SELECT)
 
     def INESRT_TABLE(Num, Name, Rank, Time):
-        sql_SELECT = '''
-        SELECT employeeNum FROM employee
-        '''
-        ret = cur.excute(sql)
-        Num = ord(ret[0]) + 1
-        # Name = input("Input Name : ")
-        # Rank = input("Input Rank : ")
         Time = datetime.datetime.now()
 
         data = (Num, Name, Rank, Time)
