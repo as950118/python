@@ -6,7 +6,7 @@ defaultURL="https://openapi.naver.com/v1/search/news.xml"
 sort='&sort=sim'
 start='&start=1'
 display='&display=10'
-file=open("c:\\python34\\crawl\\window.txt","w",encoding='utf-8')
+file=open("./window.txt","w",encoding='utf-8')
 
 while 1:
     search=str(input("검색어 : "))
