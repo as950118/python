@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'user',
-        'USER' : 'root',
-        'PASSWORD' : 'password',
-        'HOST' : 'localhost',
-        'PORT' : '3306'
+        'NAME': 'django_locker', # DB명
+        'USER': 'root', # 데이터베이스 계정
+        'PASSWORD': 'root', # 계정 비밀번호
+        'HOST': '', # 데이테베이스 주소(IP)
+        'PORT': '', # 데이터베이스 포트(보통은 3306)
     }
 }
 

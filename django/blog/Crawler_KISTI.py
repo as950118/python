@@ -1,35 +1,10 @@
-from django.shortcuts import render
 import os
 import urllib.request
 import urllib.parse
 from bs4 import BeautifulSoup
 
-# Create your views here
-from django.utils import timezone
-from .models import Post
-
-
-def main(req):
-    posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
-    return render(req, 'blog/main.html', {'posts':posts})
-
-def board_1(req):
-    posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
-    return render(req, 'blog/board_1.html', {'posts':posts})
-
-def board_2(req):
-    posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
-    return render(req, 'blog/board_2.html', {'posts':posts})
-
-def search(req):
-    posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
-    print("******QUERY*********",req.GET['search'])
-    Crawler_KISTI(req.GET['search'])
-    return render(req, 'blog/search.html', {'posts':posts})
-
-
 def Crawler_KISTI(QUERY):
-
+    
     file = open('./Crawler_KISTI_'+QUERY+'.txt','w', encoding='utf-8')
 
     Arr_URL = ['Default', 'Key', 'Target', 'Search', 'Count', 'Start', 'Sort', 'Type', 'Res', 'Query']
@@ -56,7 +31,7 @@ def Crawler_KISTI(QUERY):
     resultXML = f.read()
     xmlsoup = BeautifulSoup(resultXML, 'html.parser')
     items = xmlsoup.find_all('dissertation')
-    #print(items)
+    print(items)
     for item in items:
         print(item.dissertationtitle)
         file.write('-------------------------------\n')

@@ -90,11 +90,13 @@
 
     <p></p>
 
-    <form class="form-search form-inline pull-left" action="/search" method="get">
+    <form class="form-search form-inline pull-left" action="/search" method="post">
       <select class="form-control">
           <option name="title">Title</option>
           <option name="content">Content</option>
           <option name="titlecontent">Title + Contents</option>
+          <option name="reply">Reply</option>
+          <option name="id">ID</option>
         </select>
       <input type="text" class="form-control" name="search">
       <button type="submit" class="form-control btn btn-dark">Search</button>
