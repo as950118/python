@@ -16,10 +16,12 @@
 #            -log(1-H(x)):y=0
 # == -ylog(H(x))-(1-y)log(1-H(x))
 import tensorflow as tf
-
+import numpy as np
 x_data = [[1,2],[2,3],[3,1],[4,3],[5,3],[6,2]]
 y_data = [[0],[0],[0],[1],[1],[1]]
-
+x_data = np.array(x_data, np.float32)
+y_data = np.array(y_data, np.float32)
+print(x_data, type(x_data),y_data, type(x_data))
 X = tf.placeholder(tf.float32, shape=[None, 2])
 Y = tf.placeholder(tf.float32, shape=[None, 1])
 W = tf.Variable(tf.random_normal([2,1]), name='weight')#두개의 변수(X1,X2)가 나오고 Y로 출력됨 ==> 2,1
