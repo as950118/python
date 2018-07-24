@@ -18,10 +18,7 @@ Dogs_State = data[0:,1:-1]
 #Dogs_State = list(chain.from_iterable(data[0:,:4]))
 '''
 TrueFalse = data[0:20,[-1]]
-#Dogs_State = tf.convert_to_tensor(data[:,:-1], np.float32)
-#TrueFalse = tf.convert_to_tensor(data[:,[-1]], np.float32)
 
-print(type(Dogs_temp), Dogs_temp, type(TrueFalse), TrueFalse)
 
 X = tf.placeholder(tf.float32, shape=[None, 2])
 Y = tf.placeholder(tf.float32, shape=[None, 1])
