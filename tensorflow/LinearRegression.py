@@ -1,3 +1,7 @@
+#지도학습중 예측문제에 활용
+#새로운 데이터가 들어왔을때 어떤 값이 될지를 예측
+#연속형 변수일때만 사용 가능
+
 import tensorflow as tf
 import numpy as np
 
