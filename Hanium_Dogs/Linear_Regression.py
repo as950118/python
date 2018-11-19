@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-data = np.loadtxt('./data_set.csv', delimiter=',', dtype = np.float32)
+data = np.loadtxt('./golden.csv', delimiter=',', dtype = np.float32)
 arr = [[0],[0],[0],[0]]*len(data)
 for i in range(len(data)):
     arr[i] = data[i]
@@ -11,11 +11,11 @@ Out_temp = data[0:,2]
 Dogs_BPM = data[0:20,[3]]
 Dogs_Step = data[0:,4]
 
-Dogs_State = data[0:20,1:3]
+Dogs_State = data[0:10000,1:3]
 #Dogs_State = Dogs_State.astype('list')
 #Dogs_State = list(chain.from_iterable(data[0:,:4]))
 
-TrueFalse = data[0,[-1]]
+TrueFalse = data[0:10000,[-1]]
 #Dogs_State = tf.convert_to_tensor(data[:,:-1], np.float32)
 #TrueFalse = tf.convert_to_tensor(data[:,[-1]], np.float32)
 

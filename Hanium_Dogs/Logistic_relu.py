@@ -9,14 +9,14 @@ import csv
 from itertools import chain
 
 
-data = np.loadtxt('./data_set_test.csv', delimiter=',', dtype = np.float32)
+data = np.loadtxt('./golden.csv', delimiter=',', dtype = np.float32)
 arr = [[0],[0],[0],[0]]*len(data)
-for i in range(len(data)):
+for i in range(len(data)):#
     arr[i] = data[i]
-Dogs_bpm_temp = data[0:150,5:-1]
-TrueFalse = data[0:150,[-1]]
-Test_Dogs_bpm_temp = data[150:300,5:-1]
-Test_TrueFalse = data[150:300,[-1]]
+Dogs_bpm_temp = data[20000:29134,1:3]
+TrueFalse = data[20000:29134,[-1]]
+Test_Dogs_bpm_temp = data[29134:29400,1:3]
+Test_TrueFalse = data[29134:29400,[-1]]
 
 x_data = Dogs_bpm_temp
 y_data = TrueFalse

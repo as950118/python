@@ -50,8 +50,9 @@ while 1:
         #test
         print(BPM, IBI,SIGNAL, temperature)
         wr.writerow([time.time()-starttime, BPM, IBI, SIGNAL, temperature, 0])
+        #Serial Insert to DB
+        #cur.execute("INSERT INTO DOGS_DATA(name, IBI, BPM, SIGNAL) VALUES(?, ?, ?, ?)", (name, IBI, BPM, SIGNAL))
     except:
         wr.writerow([time.time()-starttime, 0, 0, 0, 0, 1])
-    #Serial Insert to DB
-    #cur.execute("INSERT INTO DOGS_DATA(name, IBI, BPM, SIGNAL) VALUES(?, ?, ?, ?)", (name, IBI, BPM, SIGNAL))
+
 f.close()

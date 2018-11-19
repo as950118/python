@@ -1,9 +1,13 @@
 import speech_recognition as sr
 
-r = sr.Recognizer()
-mic = sr.Microphone()
 
-with mic as source:
-    audio = r.listen(source)
-ret = r.recognize_google(audio, language='ko-KR')
-print(ret)
+class STT():
+        def __init__(self):
+            self = self
+        def stt(self):
+            r = sr.Recognizer()
+            mic = sr.Microphone()
+
+            with mic as source:
+                audio = r.listen(source)
+            return r.recognize_google(audio, language='ko-KR')
