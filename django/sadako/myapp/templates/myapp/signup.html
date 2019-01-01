@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <a href = "/"><h1>main</a>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href = "/signup">signup</a>
+      </div>
+      <div>
+        <a href = "/login">login</a>
+      </div>
+      <div>
+        <a href = "/mypage">mypage</a>
+      </div>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href = "/bbs">bbs</a>
+      </div>
+      <div>
+        <a href = "/gallery">gallery</a>
+      </div>
+    </div>
+  <p></p>
+  <div>
+    <form action="/signup_post/" method="post">{% csrf_token %}
+      <p>ID
+      <input name="id"></input>
+      </p>
+      <p>PWD
+      <input name="pwd" type="password"></input>
+      </p>
+      <p>EMAIL
+      <input name="email"></input>
+      </p>
+      <p>SEX
+      <select name="sex">
+        <option value = "male">Male</option>
+        <option value = "female">Female</option>
+      </select>
+      </p>
+      <p>TEL
+      <input name="tel"></input>
+      </p>
+      <button>SignUp</button>
+    </form>
+    </div>
+  </body>
+</html>
