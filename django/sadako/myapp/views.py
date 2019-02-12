@@ -15,6 +15,6 @@ def gallery(req):
     return render(req, 'myapp/gallery.html',{})
 
 def signup_post(req):
-    id = req.POST['id']
+    id = req.POST
     print(id)
     return render(req, 'myapp/main.html',{})
