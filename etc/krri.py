@@ -12,11 +12,13 @@ for num in range(1,10):
     for i in range(0, col):
         for j in range(0, 10):
             try:
+                #읽을파일
                 rname= "Graph"+str(num)+"_Wave_Tshort_00" + str(i) + str(j) + ".csv"
                 print(rname)
                 rf = open(rname)
                 Num = num
             except Exception as E:
+                #파일이 없을시 종료
                 print(E)
                 continue
             reader = csv.reader(rf, delimiter=',')
@@ -30,7 +32,6 @@ f = open('Graph'+str(Num)+'_Wave_Tshort.csv', 'w', encoding='utf-8', newline='')
 wf = csv.writer(f)
 
     
-print(setting)
 for i in range(0, 27):
     wf.writerow(setting[i])
 for i in range(0, 600000):

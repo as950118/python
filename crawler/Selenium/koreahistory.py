@@ -26,19 +26,20 @@ def movetoboard():
     return 0
 
 
+try:
+    M = 1 #페이지
+    while 1:
+        index = -1 #초기값
+        while movetoboard():
+            continue
 
-M = 1 #페이지
-while 1:
-    index = -1 #초기값
-    while movetoboard():
-        continue
-
-    M+=1
-    if M%6==0:
-        wd.find_element_by_xpath('//*[@id="sub_content"]/div[2]/div[3]/ul/li[9]/a').click()
-    else:
-        wd.find_element_by_xpath('//*[@id="sub_content"]/div[2]/div[3]/ul/li['+str((M-1)%5 + 4)+']/a').click()
-
+        M+=1
+        if ((M-1)%5)==0:
+            wd.find_element_by_xpath('//*[@id="sub_content"]/div[2]/div[3]/ul/li[9]/a').click()
+        else:
+            wd.find_element_by_xpath('//*[@id="sub_content"]/div[2]/div[3]/ul/li['+str((M-1)%5 + 4)+']/a').click()
+except Exception as e:
+    print("Error :", e)
 '''
 def back(PageNum):
     wd.get("http://www.historyexam.go.kr/pst/list.do?bbs=dat")

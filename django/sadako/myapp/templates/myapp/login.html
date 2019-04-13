@@ -3,5 +3,35 @@
   <head>
   </head>
   <body>
+    <div>
+      <a href = "/"><h1>main</a>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href = "/signup">signup</a>
+      </div>
+      <div>
+        <a href = "/login">login</a>
+      </div>
+      <div>
+        <a href = "/mypage">mypage</a>
+      </div>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href = "/bbs">bbs</a>
+      </div>
+      <div>
+        <a href = "/gallery">gallery</a>
+      </div>
+    </div>
+    <!--login_form-->
+    <form action="/login_post/" method="post">
+      {% csrf_token %}
+      {{ form|linebreaks }}
+      <input type="submit" value="submit" name="submit">
+    </form>
   </body>
 </html>
