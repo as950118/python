@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <div>
+    <div>
+      <a href="/main"><h1>main</a>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href="/signup">signup</a>
+      </div>
+      <div>
+        <a href="/login">login</a>
+      </div>
+      <div>
+        <a href="/mypage">mypage</a>
+      </div>
+    </div>
+    <p></p>
+    <div>
+      <div>
+        <a href="/bbs">bbs</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form action= "/signup", method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="submit">
+    </form>
+  </div>
+</body>
+
+</html>
