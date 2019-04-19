@@ -20,7 +20,7 @@ headers={
     'X-Naver-Client-Id':'BqGt9k2AGN36MSJWqznB',
     'X-Naver-Client-Secret':'_CJLTTvzol'
     }
-    
+
 req=urllib.request.Request(fullURL,headers=headers)
 f=urllib.request.urlopen(req)
 resultXML=f.read()
