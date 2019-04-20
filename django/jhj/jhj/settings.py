@@ -1,5 +1,3 @@
-LOGIN_REDIRECT_URL = '/mypage'
-
 """
 Django settings for jhj project.
 

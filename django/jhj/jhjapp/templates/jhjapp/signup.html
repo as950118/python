@@ -1,3 +1,4 @@
+<!--signup.html-->
 <!DOCTYPE html>
 <html>
 
@@ -15,10 +16,14 @@
         <a href="/signup">signup</a>
       </div>
       <div>
-        <a href="/login">login</a>
+        {% if usr %} <!--로그인 상태라면 -->
+          <a href="/accounts/logout">logout</a>
+        {% else %} <!--로그인 상태가 아니라면-->
+          <a href="/accounts/login">login</a>
+        {% endif %}
       </div>
       <div>
-        <a href="/mypage">mypage</a>
+        <a href="/accounts/profile">profile</a>
       </div>
     </div>
     <p></p>

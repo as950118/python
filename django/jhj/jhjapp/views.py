@@ -2,10 +2,16 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, get_user
+
 # Create your views here.
 def main(req):
-    return render(req, 'jhjapp/main.html', {})
+    try:
+        username = get_user(req) #request에서 이름을 받아옴
+        usr = User.objects.get(username=username) #db에서 이름에 해당하는 정보를 불러옴
+        return render(req, 'jhjapp/main.html', {'user':usr})
+    except:
+        return render(req, 'jhjapp/main.html', {})
 def signup(req):
     #get방식으로 접속
     if req.method == 'GET':
@@ -22,17 +28,20 @@ def signup(req):
             return render(req, 'jhjapp/signup.html', {'form':UserCreationForm()}) #다시 회원가입으로
 def login(req):
     if req.method == 'GET':
-        return render(req, 'jhjapp/login.html', {})
+        return render(req, 'jhjapp/accounts/login.html', {})
     else:
         form = authenticate(username = username, password = password)
         if form:
             login(req, form)
             print("Login Success !")
-            return render(req, 'jhjapp/mypage.html', {}) #메인페이지로 이동
         else:
             print("Login Faield :", e)
-            return render(req, 'jhjapp/login.html', {}) #다시 회원
-def mypage(req):
-    return render(req, 'jhjapp/mypage.html', {})
+            return render(req, 'jhjapp/accounts/login.html', {}) #다시 회원
+def logout(req):
+    pass
+def profile(req):
+    username = get_user(req) #request에서 이름을 받아옴
+    usr = User.objects.get(username=username) #db에서 이름에 해당하는 정보를 불러옴
+    return render(req, 'jhjapp/accounts/profile.html', {'usr':usr}) #넘겨줌
 def bbs(req):
     return render(req, 'jhjapp/bbs.html', {})
